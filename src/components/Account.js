@@ -1,5 +1,6 @@
 import { React, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useFormik } from "formik";
 
 
 const Account = () => {
@@ -29,6 +30,7 @@ const Account = () => {
     LoginForm.style.transform = "translateX(300px)";
     Indicator.style.transform = "translateX(0px)";
   }
+  const formik = useFormik({})
 
   return (
     <div>
@@ -53,7 +55,9 @@ const Account = () => {
                     <hr id="Indicator" />
                   </div>
                   <form id="LoginForm">
-                    <input type="email" placeholder="Email" />
+                    <input onClick={(e) => {
+                      console.log(e.target.value)
+                    }} type="email" placeholder="Email" />
                     <input type="password" placeholder="password" />
                     <button type="submit" className="btn">
                       Login
@@ -64,7 +68,7 @@ const Account = () => {
                     <input type="text" placeholder="Username" />
                     <input type="email" placeholder="Email" />
                     <input type="password" placeholder="password" />
-                    <button type="submit" className="btn">
+                    <button onClick={""} type="submit" className="btn">
                       Register
                     </button>
                   </form>
