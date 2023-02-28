@@ -65,25 +65,24 @@ form .btn{
 form .btn:focus{
 	outline: none;
 }
-#LoginForm{
-	left: 0px;
-}
-#RegForm{
-	left: -300px;
-}
 form a{
 	font-size: 12px;
 }
-#Indicator{
+.indicatorRegister{
 	width: 100px;
 	border: none;
 	background: #ff523b;
 	height: 3px;
 	margin-top: 8px;
-	transform: translateX(100px);
-	transition: transform 1s;
 }
-
+.indicatorLogin{
+	width: 100px;
+	border: none;
+	background: #ff523b;
+	height: 3px;
+	margin-top: 8px;
+	margin-left: 100px;
+}
 /*----- media query for less than 600 screen size -----*/
 
 @media only screen and (max-width: 600px){
