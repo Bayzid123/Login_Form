@@ -1,26 +1,34 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
-const Register = () => {
+const Register = ({setPage}) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    fetch("http://10.209.100.207:5001/ApiForMyProjects/User/CreateUser", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        strUserName: username,
-        strEmail: email,
-        strPassword: password,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
+    try {
+      const response = await axios.post(
+        `http://10.209.100.207:5001/ApiForMyProjects/User/CreateUser`,
+        {
+          strUserName: username,
+          strEmail: email,
+          strPassword: password,
+        }
+      );
+      toast.success(response.data.message, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 2000,
+      });
+      setPage("login")
+    } catch (e) {
+      toast.warn(e.response.data.message, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 2000,
+      });
+    }
   };
 
   const handleUsernameChange = (event) => {
