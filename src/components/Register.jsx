@@ -11,7 +11,7 @@ const Register = ({setPage}) => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        `http://10.209.100.207:5001/ApiForMyProjects/User/CreateUser`,
+        `http://192.168.0.103:5001/ApiForMyProjects/User/CreateUser`,
         {
           strUserName: username,
           strEmail: email,
@@ -49,18 +49,21 @@ const Register = ({setPage}) => {
         <input
           type="text"
           placeholder="Username"
+          required
           value={username}
           onChange={handleUsernameChange}
         />
         <input
           type="email"
           placeholder="Email"
+          required
           value={email}
           onChange={handleEmailChange}
         />
         <input
           type="password"
-          placeholder="password"
+          placeholder="Password"
+          required
           value={password}
           onChange={handlePasswordChange}
         />

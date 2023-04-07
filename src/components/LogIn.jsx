@@ -13,7 +13,7 @@ const Account = () => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        `http://10.209.100.207:5001/ApiForMyProjects/User/UserLogin`,
+        `http://192.168.0.103:5001/ApiForMyProjects/User/UserLogin`,
         {
           strEmail: email,
           strPassword: password,
@@ -88,12 +88,14 @@ const Account = () => {
                         }}
                         type="email"
                         placeholder="Email"
+                        required
                         value={email}
                         onChange={handleEmailChange}
                       />
                       <input
                         type="password"
-                        placeholder="password"
+                        placeholder="Password"
+                        required
                         value={password}
                         onChange={handlePasswordChange}
                       />

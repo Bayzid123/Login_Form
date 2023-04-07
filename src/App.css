@@ -83,6 +83,133 @@ form a{
 	margin-top: 8px;
 	margin-left: 100px;
 }
+
+/*----- dashboard page -----*/
+/* .invoice{
+	margin: 80px;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Poppins', sans-serif;
+}
+.customerInput{
+	width: 500px;
+	height: 25px;
+}
+.invoiceDetails{
+	margin: 20px;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+ .smart-button {
+	display: inline-block;
+	padding: 10px 24px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #2f80ed;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	margin-inline: 20px;
+  }
+  
+  .smart-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .smart-button:active {
+	transform: translateY(0);
+	box-shadow: none;
+  }
+  .save{
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  } */
+  /* Overall invoice style */
+.invoice {
+	max-width: 800px;
+	margin: 0 auto;
+	font-family: Arial, sans-serif;
+	margin-top: 50px;
+  }
+  
+  /* Customer name and email section */
+  .customer {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+  }
+  
+  .customer label {
+	margin-bottom: 5px;
+  }
+  
+  .customerInput {
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	width: 100%;
+  }
+  
+  /* Invoice details section */
+  .invoiceDetails {
+	margin-bottom: 20px;
+  }
+  
+  table {
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  th,
+  td {
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+  }
+  
+  th {
+	background-color: #f2f2f2;
+	font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  button[type="button"],
+  button[type="submit"] {
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+	width: 100%;
+  }
+  
+  button.smart-button {
+	background-color: #4CAF50;
+	color: white;
+	cursor: pointer;
+	margin-inline: 10px;
+  }
+  
+  button.smart-button:hover {
+	background-color: #3e8e41;
+  }
+  
+  button.smart-button:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+  }
+  
 /*----- media query for less than 600 screen size -----*/
 
 @media only screen and (max-width: 600px){
