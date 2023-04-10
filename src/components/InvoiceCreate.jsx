@@ -13,8 +13,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
-const Invoice = () => {
+const InvoiceCreate = () => {
+  const navigate = useNavigate();
   const [invoice, setInvoice] = useState({
     strCustomerName: "",
     strCustomerEmail: "",
@@ -63,7 +65,7 @@ const Invoice = () => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "http://192.168.0.103:5001/ApiForMyProjects/Invoice/CreateInvoice",
+        "http://10.209.100.87:5001/ApiForMyProjects/Invoice/CreateInvoice",
         {
           strCustomerName: invoice.strCustomerName,
           strCustomerEmail: invoice.strCustomerEmail,
@@ -80,6 +82,7 @@ const Invoice = () => {
         position: toast.POSITION.BOTTOM_RIGHT,
         autoClose: 2000,
       });
+      navigate("/InvoiceLanding");
     } catch (e) {
       // Handle error
       toast.warn(e.response.data.message, {
@@ -181,5 +184,4 @@ const Invoice = () => {
   );
 };
 
-export default Invoice;
-
+export default InvoiceCreate;

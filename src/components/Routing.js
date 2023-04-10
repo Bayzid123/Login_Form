@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./Dashboard";
+import InvoiceCreate from "./InvoiceCreate";
 import LogIn from "./LogIn";
+import InvoiceLandingPage from "./InvoiceLanding";
 
 const Routing = () => {
   return (
@@ -9,7 +10,8 @@ const Routing = () => {
       <Routes>
         {/* <Route path="/" element={<LogIn />} />
         <Route path="/Dashboard" element={<Dashboard />} /> */}
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<InvoiceCreate />} />
+        <Route path="/InvoiceLanding" element={<InvoiceLandingPage />} />
       </Routes>
     </Router>
   );
