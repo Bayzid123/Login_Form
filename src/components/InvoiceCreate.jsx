@@ -1,15 +1,3 @@
-// import React from "react";
-
-// const Dashboard = () => {
-//   return (
-//     <div>
-//       <h1>Hello. Welcome To The Dashboard.</h1>
-//     </div>
-//   );
-// };
-
-// export default Dashboard;
-
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -141,7 +129,8 @@ const InvoiceCreate = () => {
                     <input
                       type="number"
                       name="numPrice"
-                      value={product.numPrice}
+                      value={product.numPrice < 0 ? 0 : product.numPrice}
+                      min="0"
                       onChange={(event) => handleProductChange(event, index)}
                     />
                   </td>
@@ -149,7 +138,8 @@ const InvoiceCreate = () => {
                     <input
                       type="number"
                       name="intQuantity"
-                      value={product.intQuantity}
+                      value={product.intQuantity < 1 ? 1 : product.intQuantity}
+                      min="1"
                       onChange={(event) => handleProductChange(event, index)}
                     />
                   </td>
